@@ -12,7 +12,7 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Importamos la clase Currency de la aplicación Sales
-from applications.sales.models import Currency
+# from applications.sales.models import Currency
 
 
 class UnitMeasure(models.Model):
@@ -88,9 +88,9 @@ class Product(models.Model):
     unit_measure_id = models.ForeignKey(UnitMeasure, on_delete=models.CASCADE,
                                         default=None, db_column="unit_measure_id", verbose_name="Unidad de Medida")
 
-    # foreign_key: Moneda
-    currency_id = models.ForeignKey(
-        Currency, on_delete=models.CASCADE, default=None, db_column="currency_id", verbose_name="Moneda")
+    # # foreign_key: Moneda
+    # currency_id = models.ForeignKey(
+    #     Currency, on_delete=models.CASCADE, default=None, db_column="currency_id", verbose_name="Moneda")
 
     # precio de compra.
     purchase_price = models.DecimalField(

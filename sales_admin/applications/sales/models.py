@@ -47,7 +47,7 @@ class Order(models.Model):
     """
  
     number_id = models.AutoField(primary_key=True, db_column='number_id')
-    client = models.ForeignKey(Client, default=None, db_column="client_id", verbose_name="Cliente")
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, default=None, db_column="client_id", verbose_name="Cliente")
     address_order = models.CharField(max_length=50, db_column='address_order', verbose_name="Direccion de entrega")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de Creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de Moficación")
