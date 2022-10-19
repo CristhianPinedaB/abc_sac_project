@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('almacen/', include("applications.warehouse.urls")),
     path('api/warehouse/', include("applications.warehouse.api.urls")),
+    path('api/sales/', include("applications.sales.api.urls")),
     path('api/login/', views.obtain_auth_token)
 ]
