@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mt-5">Módulo de relacion con el cliente </h1>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card w-100">
+            <div class="card-body">
+              <h5 class="card-title">Modulo de clientes </h5>
+              <p class="card-text">Aquí se muestran la lista de clientes </p>
+              <a href="{% url 'crm:register_client_list' %}" class="btn btn-primary">Listado</a>
+              <!-- <a href="{% url 'crm:register_client_new' %}" class="btn btn-success">Nuevo</a> -->
+            </div>
+          </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card w-100">
+            <div class="card-body">
+              <h5 class="card-title"> Modulo de pedidos </h5>
+              <p class="card-text">Aquí se realizan los pedidos </p>
+              <!-- <a href="{% url 'sales:order_list' %}" class="btn btn-primary">Listado</a> -->
+              <a href="{% url 'sales:order_new' %}" class="btn btn-success">Nuevo</a>
+            </div>
+          </div>
+    </div>
+</div>
+
+{% endblock %}

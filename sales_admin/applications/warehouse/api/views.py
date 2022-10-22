@@ -11,12 +11,17 @@ from rest_framework import status
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
+from rest_framework.pagination import PageNumberPagination
+
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    #max_page_size = 1000
+
 class ProductCategoryViewSet(ModelViewSet):
     """
     Clase ViewSet de Product Category
     """
-
-    # Obtenemos los datos que queremos devolver.
     queryset = ProductCategory.objects.all()
 
     # Le indicamos el serializer que debe utilizar para convertir los objetos a JSON.

@@ -21,12 +21,12 @@ class Client(models.Model):
     )
 
     id = models.AutoField(primary_key=True, db_column='id')
-    document_type = models.CharField(max_length=3, choices=DOCUMENTS_LIST, db_column='document_type')
-    document_number = models.CharField(max_length=15, unique=True, db_column='document_number')
-    name_client = models.CharField(max_length=30, db_column='name_client')
-    type_client = models.CharField(max_length=30, choices=TYPE_CLIENTS,db_column='type_client')
-    address = models.CharField(max_length=50, db_column='address')
-    phone_number = models.CharField(max_length=15, blank=True, db_column='phone_number')
+    document_type = models.CharField(max_length=3, choices=DOCUMENTS_LIST, db_column='document_type',verbose_name = 'Tipo de Documento')
+    document_number = models.CharField(max_length=15, unique=True, db_column='document_number',verbose_name = 'Numero de Documento')
+    name_client = models.CharField(max_length=30, db_column='name_client', verbose_name = 'Razon social ')
+    type_client = models.CharField(max_length=30, choices=TYPE_CLIENTS,db_column='type_client', verbose_name = 'Tipo de Cliente')
+    address = models.CharField(max_length=50, db_column='address',verbose_name = 'Direccion')
+    phone_number = models.CharField(max_length=15, blank=True, db_column='phone_number',verbose_name = 'Telefono')
 
     def __str__(self):
         return self.name_client

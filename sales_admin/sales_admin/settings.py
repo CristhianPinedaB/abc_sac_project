@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import os
+os.environ["PATH"] += os.pathsep + r'the Graphviz bin file address on your system'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,7 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-    'django_filters'
+    'django_filters',
+    'django_extensions'
 ]
 
 REST_FRAMEWORK = {
@@ -54,7 +57,7 @@ REST_FRAMEWORK = {
     ],
     #'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 2
+    'PAGE_SIZE': 5
 }
 
 MIDDLEWARE = [

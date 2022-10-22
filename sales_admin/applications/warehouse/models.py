@@ -130,9 +130,12 @@ class Product(models.Model):
         """
         Sobre escribimos el método save de la clase Model.
         """
+        percent_discount = self.percent_discount
+        if percent_discount < self.product_category_id.percent_discount:
+            percent_discount = self.product_category_id.percent_discount
         # Calculamos el monto de descuento
         self.discount_amount = round(
-            (int(self.percent_discount)/100)*float(self.base_sale_price), 2)
+            (int(percent_discount)/100)*float(self.base_sale_price), 2)
         
         # Calculamos el precio de venta
         self.sale_price = float(self.base_sale_price) - \

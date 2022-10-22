@@ -16,7 +16,7 @@ class ProductAdmin(admin.ModelAdmin):
     """
 
     # Definimos los atributos que queremos mostrar en django admin (formulario)
-    fields = ('code', 'name', 'product_category_id', 'unit_measure_id', 'purchase_price', 'base_sale_price', 'sale_price','percent_discount')
+    fields = ('code', 'name', 'product_category_id', 'unit_measure_id', 'purchase_price', 'base_sale_price', 'sale_price','percent_discount','stock')
     
     # Definimos los atributos que queremos que se muestren en el listado de productos
     # display_sale_price: es una función que devuelve el precio de venta.
